@@ -12,8 +12,8 @@ RUN set -ex; \
     curl -sfL https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer && \
     chmod +x /usr/bin/composer && \
     composer config -g repo.packagist composer https://mirrors.aliyun.com/composer && \
-    apt update && apt install -y --no-install-recommends unzip git supervisor \
-    libzstd-dev libpng-dev libwebp-dev libjpeg-dev libfreetype6-dev libssl-dev libzip-dev && \
+    apt update && apt install -y --no-install-recommends libzstd-dev libpng-dev libwebp-dev libjpeg-dev libfreetype6-dev libssl-dev libzip-dev \
+    unzip git supervisor && \
     docker-php-source extract && \
     docker-php-ext-configure gd --with-freetype=/usr/include --with-jpeg=/usr/include --with-webp=/usr/include && \
     docker-php-ext-install -j$(nproc) gd && \
