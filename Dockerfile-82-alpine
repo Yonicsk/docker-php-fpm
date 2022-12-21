@@ -8,7 +8,7 @@ RUN set -ex; \
     chmod +x /usr/bin/composer && \
     composer config -g repo.packagist composer https://mirrors.aliyun.com/composer && \
     apk add --no-cache --update --virtual .build-deps autoconf g++ make && \
-    apk add --no-cache libzip-dev libpng-dev libwebp-dev libjpeg-turbo-dev freetype-dev libressl-dev zstd-dev libstdc++ \
+    apk add --no-cache tzdata libzip-dev libpng-dev libwebp-dev libjpeg-turbo-dev freetype-dev libressl-dev zstd-dev libstdc++ \
     unzip git supervisor && \
     docker-php-source extract && \
     docker-php-ext-configure gd --with-freetype=/usr/include --with-jpeg=/usr/include --with-webp=/usr/include && \
